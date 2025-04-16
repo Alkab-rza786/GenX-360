@@ -75,17 +75,28 @@ def recognize_face():
 
             # assign email based on name
             random_domains = ["gmail.com", "yahoo.com", "outlook.com"]
-            if name.lower() == "narendramodi":
+            if name.lower() == "virat kohli":
+                email="virat@gmail.com"
+                password="virat123"
+            elif name.lower() == "anish kumar":
+                email="anish@gmail.com"
+                password="anish123"
+            elif name.lower() == "narendramodi":
                 email = "narendramodi@gmail.com"
+                password ="modi123"
+
             elif name.lower() == "alkab":
-                email = "alkabrza61@gmail.com"
+                email = "alkabrza61@gmail.com",
+                password = "alkab123"
             else:
                 email = f"{name.lower()}{random.randint(100, 999)}@{random.choice(random_domains)}"
+                password = "default123"
 
             # Save the result to send back to React
             result = {
                 "name": name,
                 "email": email,
+                "password":password,
                 "confidence": float(proba)
             }
             results.append(result)
