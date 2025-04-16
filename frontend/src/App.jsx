@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import AuthForm from './components/AuthForm';
-import MedicalRecordForm from './components/MedicalRecordForm';
+import MedicalRecordForm from './Components/MedicalRecordForm';
 
 import Profile from './Components/Profile';
+import EmergencyInfo from './Components/EmergencyInfo';
+import DiseaseHistory from './Components/DeseaseHistory';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/auth" element={<AuthForm />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/medical-record" element={<MedicalRecordForm />} />
+          <Route path="/emergency" element={<EmergencyInfo />} />
+          <Route path="/deaseas-history" element={<DiseaseHistory />} />
         </Routes>
       </div>
     </Router>

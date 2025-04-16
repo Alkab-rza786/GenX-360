@@ -10,8 +10,10 @@ import {
     CalendarCheck,
     HeartPulse
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-gray-100 px-4 py-10">
             <div className="max-w-6xl mx-auto">
@@ -38,7 +40,7 @@ const Home = () => {
 
                 {/* Action Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                    <Card icon={<FileText className="text-blue-600" size={32} />} title="Disease History" desc="View all past diagnoses" />
+                    <Card onClick={() => navigate("/deaseas-history")}  icon={<FileText className="text-blue-600" size={32} />} title="Disease History" desc="View all past diagnoses" />
                     <Card icon={<PlusCircle className="text-green-600" size={32} />} title="Add Record" desc="Upload prescriptions or tests" />
                     <Card icon={<AlertTriangle className="text-red-600" size={32} />} title="Emergency" desc="Trigger emergency help" />
                     <Card icon={<UserCircle className="text-purple-600" size={32} />} title="Profile" desc="Edit your medical info" />
@@ -77,13 +79,17 @@ const Home = () => {
     );
 };
 
-const Card = ({ icon, title, desc }) => (
-    <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-all cursor-pointer">
+const Card = ({ icon, title, desc, onClick }) => (
+    <div
+        onClick={onClick}
+        className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition-all cursor-pointer"
+    >
         {icon}
         <h2 className="text-lg font-semibold text-gray-800 mt-3">{title}</h2>
         <p className="text-sm text-gray-500 mt-1">{desc}</p>
     </div>
 );
+
 
 const StatCard = ({ icon, label, value }) => (
     <div className="bg-white p-5 rounded-xl flex items-center shadow">
