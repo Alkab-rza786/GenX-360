@@ -106,6 +106,7 @@ const EmergencyImage = () => {
           {result.email && (
             <p className="mt-2 text-gray-700">
               <strong>Assigned Email:</strong> {result.email}
+              <strong>password Email:</strong> {result.password}
             </p>
           )}
         </div>
